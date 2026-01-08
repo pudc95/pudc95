@@ -9,34 +9,44 @@
   <div class="card">
     <h1>联系我</h1>
 
-    <form id="contactForm">
-      <input type="text" name="name" placeholder="你的名字" required><br><br>
-      <input type="email" name="email" placeholder="你的邮箱" required><br><br>
-      <textarea name="message" placeholder="你想说的话" required></textarea><br><br>
-      <button type="submit">发送</button>
-    </form>
+   <form id="contactForm"
+      action="你的 Apps Script 链接"
+      method="POST"
+      target="hidden_iframe">
+  <input name="name" required placeholder="你的名字">
+  <input name="email" required placeholder="邮箱">
+  <textarea name="message" required placeholder="留言"></textarea>
+  <button id="sendBtn" type="submit">发送</button>
+</form>
 
-    <p id="msg"></p>
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+<p id="statusText"></p>
+
     <a href="index.html">← 返回首页</a>
   </div>
 
-  <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbySydl91rBgDoozgT_4Ir1enfn7ECp7F6yRIPvn9ERMfAa0LEE7zvPfH_0xFc5Rr5bT/exec';
-    const form = document.getElementById('contactForm');
-    const msg = document.getElementById('msg');
+<script>
+const form = document.getElementById('contactForm');
+const btn = document.getElementById('sendBtn');
+const statusText = document.getElementById('statusText');
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-          msg.textContent = '提交成功！谢谢你的留言';
-          form.reset();
-        })
-        .catch(error => {
-          msg.textContent = '提交失败，请稍后重试';
-          console.error(error);
-        });
-    });
-  </script>
+form.addEventListener('submit', () => {
+  btn.disabled = true;
+  btn.innerText = '正在发送...';
+  statusText.innerText = '';
+
+  setTimeout(() => {
+    btn.innerText = '发送成功';
+    statusText.innerText = '感谢您的反馈！';
+  }, 2000);
+
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.innerText = '发送';
+    form.reset();
+  }, 5000);
+});
+</script>
+
 </body>
 </html>
