@@ -169,5 +169,27 @@ button {
   letter-spacing: .5px;
 }
 
+/* ===== 分类图片点触动画 ===== */
+.category-item img {
+  transition: all .3s ease;
+}
+
+.category-item:hover img {
+  filter: blur(2px) brightness(0.85);
+}
+
+/* ===== 分类文字按钮反转效果 ===== */
+.category-name {
+  transition: all .3s ease;
+  padding: 6px 12px;
+  border-radius: 18px;
+  display: inline-block;
+}
+
+.category-item:hover .category-name {
+  background: #667eea;
+  color: white;
+}
+
 
 
