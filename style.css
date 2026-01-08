@@ -89,3 +89,70 @@ button {
   color: #667eea;
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 999;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 花体品牌 */
+.brand {
+  font-family: "Brush Script MT", "Comic Sans MS", cursive;
+  font-size: 26px;
+  color: #764ba2;
+  letter-spacing: 1px;
+}
+
+/* 图标按钮 */
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 50%;
+  transition: all .2s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(0,0,0,.06);
+  transform: scale(1.1);
+}
+
+/* 文字按钮 */
+.text-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: all .2s ease;
+}
+
+.text-btn:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* 内容整体下移避免被顶栏遮住 */
+.card {
+  margin-top: 160px;
+}
+
