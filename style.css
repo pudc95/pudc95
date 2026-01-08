@@ -36,37 +36,26 @@ body {
   letter-spacing: 1px;
 }
 
-/* ===== Menu / Search 按钮 ===== */
-.icon-btn {
-  background: none;
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  padding: 8px 14px;
-  border-radius: 20px;
-  transition: all .2s ease;
-}
-.icon-btn:hover {
-  background: rgba(0,0,0,.06);
-  transform: scale(1.05);
-}
-
-/* ===== Account / Contact Us 按钮 ===== */
+/* ===== 所有顶栏按钮统一风格 ===== */
+.icon-btn,
 .text-btn {
   background: none;
   border: none;
   font-family: "Segoe UI Black", "Segoe UI", sans-serif;
   font-size: 16px;
   cursor: pointer;
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 20px;
   transition: all .2s ease;
 }
+
+.icon-btn:hover,
 .text-btn:hover {
   background: #667eea;
   color: white;
   transform: translateY(-2px);
 }
+
 
 /* ===== 中央卡片容器 ===== */
 .card {
@@ -109,3 +98,4 @@ input, textarea {
 button {
   padding: 8px 16px;
 }
+
