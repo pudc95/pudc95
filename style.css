@@ -138,10 +138,13 @@ button {
 .category-title {
   font-family: "Edwardian Script ITC", "Brush Script MT", cursive;
   font-size: 60px;
-  width: 14%;
+  width: 33%;
   margin: 0 auto 80px;
   color: #764ba2;
+  white-space: nowrap;     /* 保证 Shop by Category 永远一行 */
+  text-align: center;
 }
+
 
 /* ===== 分类图片网格 ===== */
 .category-grid {
@@ -165,5 +168,6 @@ button {
   font-size: 18px;
   letter-spacing: .5px;
 }
+
 
 
