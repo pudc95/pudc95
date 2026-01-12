@@ -7,32 +7,24 @@ body {
 }
 
 /* ===== 顶部导航栏 ===== */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 90px;
-  background: rgba(255,255,255,.95);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  z-index: 999;
+.navbar{
+  position:fixed;top:0;left:0;width:100%;height:90px;
+  background:rgba(255,255,255,.95);
+  z-index:999;
 }
-
-/* 顶栏左右 */
 .nav-left,.nav-right{
-  display:flex;
-  align-items:center;
-  gap:14px;
+  position:absolute;top:50%;transform:translateY(-50%);
+  display:flex;gap:14px;
+}
+.nav-left{left:40px;}
+.nav-right{right:40px;}
+.brand{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-size:38px;color:#764ba2;
+  pointer-events:none;
 }
 
-.brand{
-  font-family:"Edwardian Script ITC","Brush Script MT",cursive;
-  font-size:38px;
-  color:#764ba2;
-}
 
 /* 顶栏按钮 */
 .icon-btn,.text-btn{
@@ -121,27 +113,23 @@ body {
 
 /* ===== 二级栏 ===== */
 .sub-navbar{
-  position:fixed;
-  top:90px;
-  left:0;
-  width:100%;
-  height:72px;
+  position:fixed;top:90px;left:0;width:100%;height:72px;
   background:linear-gradient(135deg,#fdfbff,#f5f2fa);
-  border-top:1px solid rgba(255,255,255,.8);
-  border-bottom:1px solid rgba(118,75,162,.15);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 40px;
   z-index:998;
 }
-
-.sub-title{
-  font-family:"Edwardian Script ITC","Brush Script MT",cursive;
-  font-size:36px;
-  color:#b85b3a;
-  letter-spacing:1px;
+.sub-navbar button:first-child{
+  position:absolute;left:40px;top:50%;transform:translateY(-50%);
 }
+.sub-navbar button:last-child{
+  position:absolute;right:40px;top:50%;transform:translateY(-50%);
+}
+.sub-title{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-size:36px;color:#b85b3a;
+  pointer-events:none;
+}
+
 
 .filter-btn{
   background:none;
@@ -166,4 +154,28 @@ body {
 /* ===== 分类页整体下移 ===== */
 .has-subnav .category-section{
   padding-top:220px;
+}
+
+.filter-hint{
+  position:fixed;
+  top:162px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:8px 26px;
+  background:linear-gradient(135deg,#7f6bcf,#a28fd9);
+  border-radius:26px;
+  display:flex;
+  gap:20px;
+  align-items:center;
+  z-index:997;
+  transition:.3s;
+}
+
+.product-hero{
+  margin-top:230px;
+  min-height:80vh;
+  display:grid;
+  grid-template-columns:1.2fr 1fr .8fr;
+  gap:40px;
+  padding:40px 8% 80px;
 }
