@@ -13,9 +13,7 @@
     <button class="icon-btn">Menu</button>
     <button class="icon-btn">Search</button>
   </div>
-
   <div class="brand">Jewelry Baby</div>
-
   <div class="nav-right">
     <button class="text-btn">Account</button>
     <button class="text-btn">Contact Us</button>
@@ -23,40 +21,18 @@
 </div>
 
 <div class="sub-navbar">
-  <div>
-    <button class="filter-btn" onclick="history.back()">← Back</button>
-  </div>
-
+  <button class="filter-btn" onclick="history.back()">← Back</button>
   <div class="sub-title">Earrings</div>
-
-  <div>
-    <button class="filter-btn">Filter</button>
-  </div>
+  <button class="filter-btn">Filter</button>
 </div>
 
-  <div class="filter-hint" id="filterHint">
+<div class="filter-hint" id="filterHint">
   <span>Let us help you quickly find your perfect piece.</span>
-
-  <button class="hint-action"
-          onclick="document.getElementById('filterHint').style.display='none'">
-    Explore by myself
-  </button>
-
-  <span class="hint-close"
-        onclick="document.getElementById('filterHint').style.display='none'">✕</span>
+  <button class="hint-action" onclick="filterHint.remove()">Explore by myself</button>
+  <span class="hint-close" onclick="filterHint.remove()">✕</span>
 </div>
 
-<script>
-window.addEventListener("scroll",()=>{
-  const hint = document.getElementById("filterHint");
-  if(!hint) return;
-  hint.style.opacity = Math.max(0,1-window.scrollY/150);
-});
-</script>
-
-<div class="category-section">
-  <div class="product-hero">
-
+<div class="product-hero">
   <div class="product-image">
     <img src="images/earrings/1001.jpg">
   </div>
@@ -64,7 +40,7 @@ window.addEventListener("scroll",()=>{
   <div class="product-info">
     <h2>Crystal Drop Earrings</h2>
     <p class="product-desc">
-      Handmade crystal earrings with elegant silver hooks, 
+      Handmade crystal earrings with elegant silver hooks,
       inspired by French vintage jewelry design.
     </p>
     <div class="product-price">$129</div>
@@ -80,18 +56,14 @@ window.addEventListener("scroll",()=>{
       <button>+</button>
     </div>
   </div>
-
 </div>
 
-<div class="scroll-hint">
-  <p>Scroll down, explore more</p>
-  <div class="arrows">
-    <span></span>
-    <span></span>
-  </div>
-</div>
-
-</div>
+<script>
+window.addEventListener("scroll",()=>{
+  filterHint.style.opacity = Math.max(0,1-window.scrollY/150);
+});
+</script>
 
 </body>
+
 </html>
