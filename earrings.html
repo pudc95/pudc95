@@ -35,12 +35,24 @@
 </div>
 
   <div class="filter-hint" id="filterHint">
-  <span>We can quickly help you filter our products below</span>
-  <button onclick="document.getElementById('filterHint').style.display='none'">
-    I want to explore myself
+  <span>Let us help you quickly find your perfect piece.</span>
+
+  <button class="hint-action"
+          onclick="document.getElementById('filterHint').style.display='none'">
+    Explore by myself
   </button>
+
+  <span class="hint-close"
+        onclick="document.getElementById('filterHint').style.display='none'">✕</span>
 </div>
 
+<script>
+window.addEventListener("scroll",()=>{
+  const hint = document.getElementById("filterHint");
+  if(!hint) return;
+  hint.style.opacity = Math.max(0,1-window.scrollY/150);
+});
+</script>
 
 <div class="category-section">
   <div class="product-hero">
