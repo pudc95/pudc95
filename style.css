@@ -298,7 +298,7 @@ body {
 /* ===== 智能筛选提示栏 ===== */
 .filter-hint{
   position:fixed;
-  top:162px;   /* 控制它离二级栏的距离 */
+  top:62px;   /* 控制它离二级栏的距离 */
   left:50%;
   transform:translateX(-50%);
   background:linear-gradient(135deg,#7f6bcf,#a28fd9);
@@ -353,6 +353,7 @@ body {
   gap:40px;
   padding:200px 8% 80px;
 }
+
 
 
 
