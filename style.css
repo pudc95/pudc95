@@ -138,12 +138,20 @@ body {
   z-index:998;
 }
 
-.sub-navbar button:first-child{
-  position:absolute;left:40px;top:50%;transform:translateY(-50%);
+.sub-navbar > div:first-child{
+  position:absolute;
+  left:40px;
+  top:50%;
+  transform:translateY(-50%);
 }
-.sub-navbar button:last-child{
-  position:absolute;right:40px;top:50%;transform:translateY(-50%);
+
+.sub-navbar > div:last-child{
+  position:absolute;
+  right:40px;
+  top:50%;
+  transform:translateY(-50%);
 }
+
 .sub-title{
   position:absolute;
   top:50%;
@@ -180,12 +188,20 @@ body {
 
 /* ===== 分类页整体下移 ===== */
 .has-subnav .category-section{
-  padding-top:220px;
+  padding-top:140px;
+  background:linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f2edf8 35%,
+    #d8cfe8 65%,
+    #b39ddb 85%,
+    #764ba2 100%
+  );
 }
 
 .filter-hint{
   position:fixed;
-  top:168px;                     /* 控制离二级栏的距离，越小越贴 */
+  top:162px;                     /* 控制离二级栏的距离，越小越贴 */
   left:50%;
   transform:translateX(-50%);
   background:linear-gradient(135deg,#8f7de0,#b39ddb);
@@ -235,7 +251,7 @@ body {
 .product-hero{
   max-width:1200px;
   margin:0 auto;
-  margin-top:24px;     /* 控制它离提示条的距离 */
+  margin-top:90px;     /* 控制它离提示条的距离 */
   background:rgba(255,255,255,.92);
   border-radius:28px;
   box-shadow:0 18px 40px rgba(118,75,162,.25);
@@ -302,16 +318,6 @@ body {
   color:#b85b3a;
 }
 
-.has-subnav .category-section{
-  background:linear-gradient(
-    180deg,
-    #ffffff 0%,
-    #f2edf8 35%,
-    #d8cfe8 65%,
-    #b39ddb 85%,
-    #764ba2 100%
-  );
-}
 
 body.scrolled .filter-hint{
   opacity:0;
@@ -359,5 +365,6 @@ body.scrolled .filter-hint{
   from{opacity:.25; transform:rotate(45deg) translateY(0);}
   to{opacity:.8; transform:rotate(45deg) translateY(10px);}
 }
+
 
 
