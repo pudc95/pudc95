@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 /* ===== 页面整体背景 ===== */
 body {
   background: linear-gradient(135deg,#667eea,#764ba2);
@@ -190,6 +194,7 @@ button {
   background: #667eea;
   color: white;
 }
+
 
 
 
