@@ -185,19 +185,52 @@ body {
 
 .filter-hint{
   position:fixed;
-  top:162px;
+  top:168px;                     /* 控制离二级栏的距离，越小越贴 */
   left:50%;
   transform:translateX(-50%);
+  background:linear-gradient(135deg,#8f7de0,#b39ddb);
+  color:#fff;
   padding:8px 26px;
-  background:linear-gradient(135deg,#8c7ad9,#b09be3);
-  box-shadow:0 10px 24px rgba(118,75,162,.35);
   border-radius:26px;
   display:flex;
-  gap:20px;
   align-items:center;
+  gap:18px;
+  box-shadow:0 10px 26px rgba(118,75,162,.35);
+  font-size:14px;
+  letter-spacing:.3px;
   z-index:997;
-  transition:.3s;
+  transition:opacity .4s ease, transform .4s ease;
 }
+
+.hint-action{
+  background:rgba(255,255,255,.22);
+  border:none;
+  color:#fff;
+  border-radius:16px;
+  padding:4px 14px;
+  font-size:13px;
+  cursor:pointer;
+  font-family:"Segoe UI Black","Segoe UI",sans-serif;
+  transition:.2s;
+}
+
+.hint-action:hover{
+  background:rgba(255,255,255,.32);
+}
+
+.hint-close{
+  font-size:15px;
+  cursor:pointer;
+  opacity:.6;
+  margin-left:4px;
+  transition:.2s;
+}
+
+.hint-close:hover{
+  opacity:1;
+  transform:scale(1.2);
+}
+
 
 .product-hero{
   margin-top:230px;
@@ -217,5 +250,11 @@ body {
     #b39ddb 85%,
     #764ba2 100%
   );
+}
+
+body.scrolled .filter-hint{
+  opacity:0;
+  transform:translate(-50%,-10px);
+  pointer-events:none;
 }
 
