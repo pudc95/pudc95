@@ -1,23 +1,19 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-/* ===== 页面整体背景 ===== */
 body {
   background: linear-gradient(135deg,#667eea,#764ba2);
   font-family: Arial, sans-serif;
   margin: 0;
 }
 
-/* ===== 顶部导航栏整体 ===== */
+/* ===== 顶部导航栏 ===== */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px;                    /* 顶栏高度 */
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  height: 90px;
+  background: rgba(255,255,255,.95);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,234 +21,140 @@ body {
   z-index: 999;
 }
 
-/* ===== 顶栏左右区域布局 ===== */
-.nav-left, .nav-right {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+/* 顶栏左右 */
+.nav-left,.nav-right{
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
 
-/* ===== 品牌名样式 ===== */
-.brand {
-  font-family: "Edwardian Script ITC", "Brush Script MT", cursive;
-  font-size: 38px;
-  color: #764ba2;
-  letter-spacing: 1px;
+.brand{
+  font-family:"Edwardian Script ITC","Brush Script MT",cursive;
+  font-size:38px;
+  color:#764ba2;
 }
 
-/* ===== 所有顶栏按钮统一风格 ===== */
-.icon-btn,
-.text-btn {
-  background: none;
-  border: none;
-  font-family: "Segoe UI Black", "Segoe UI", sans-serif;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 8px 18px;
-  border-radius: 20px;
-  transition: all .2s ease;
+/* 顶栏按钮 */
+.icon-btn,.text-btn{
+  background:none;
+  border:none;
+  font-size:16px;
+  cursor:pointer;
+  padding:8px 18px;
+  border-radius:20px;
+  transition:.2s;
 }
 
-.icon-btn:hover,
-.text-btn:hover {
-  background: #667eea;
-  color: white;
-  transform: translateY(-2px);
+.icon-btn:hover,.text-btn:hover{
+  background:#667eea;
+  color:#fff;
 }
 
-
-/* ===== 中央卡片容器 ===== */
-.card {
-  width: 300px;
-  background: white;
-  margin: 220px auto;              /* 下移避免被顶栏遮挡 */
-  padding: 30px;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 15px 30px rgba(0,0,0,.2);
+/* ===== 首页首屏 ===== */
+.hero{margin-top:90px;}
+.hero-img{width:100%;display:block;}
+.hero-title{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-family:"Edwardian Script ITC","Brush Script MT",cursive;
+  font-size:64px;
+  color:#fff;
 }
 
-/* ===== 头像样式 ===== */
-.avatar {
-  width: 100px;
-  border-radius: 50%;
+/* ===== 分类区域 ===== */
+.category-section{
+  padding:120px 10%;
+  background:#fff;
+  text-align:center;
 }
 
-/* ===== 普通按钮 ===== */
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 18px;
-  background: #667eea;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-}
-.btn:hover {
-  background: #556cd6;
+.category-title{
+  font-family:"Edwardian Script ITC","Brush Script MT",cursive;
+  font-size:60px;
+  color:#764ba2;
+  margin-bottom:80px;
 }
 
-/* ===== 表单输入框 ===== */
-input, textarea {
-  width: 90%;
-  padding: 8px;
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:40px;
 }
 
-/* ===== 表单按钮 ===== */
-button {
-  padding: 8px 16px;
+.category-item{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+  transition:transform .15s;
 }
 
-/* ===== 首屏品牌大图区域 ===== */
-.hero {
-  position: relative;
-  width: 100%;
-  margin-top: 90px;        /* 避开顶栏 */
+.category-item:active{transform:scale(.96);}
+
+.category-item img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:16px;
+  transition:.3s;
 }
 
-.hero-img {
-  width: 100%;
-  height: auto;
-  display: block;
+.category-item:hover img{
+  filter:blur(2px) brightness(.85);
 }
 
-/* ===== 大图中央品牌名 ===== */
-.hero-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 14%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-family: "Edwardian Script ITC", "Brush Script MT", cursive;
-  font-size: 64px;
-  color: white;
-  letter-spacing: 2px;
-  pointer-events: none;
+.category-name{
+  margin-top:18px;
+  font-size:18px;
+  transition:.3s;
 }
 
-/* ===== 分类区域整体 ===== */
-.category-section {
-  padding: 120px 10%;
-  background: white;
-  text-align: center;
+.category-item:hover .category-name{
+  background:#667eea;
+  color:#fff;
+  padding:6px 12px;
+  border-radius:18px;
 }
 
-/* ===== 分类标题 ===== */
-.category-title {
-  font-family: "Edwardian Script ITC", "Brush Script MT", cursive;
-  font-size: 60px;
-  width: 33%;
-  margin: 0 auto 80px;
-  color: #764ba2;
-  white-space: nowrap;     /* 保证 Shop by Category 永远一行 */
-  text-align: center;
+/* ===== 二级栏 ===== */
+.sub-navbar{
+  position:fixed;
+  top:90px;
+  left:0;
+  width:100%;
+  height:80px;
+  background:rgba(255,255,255,.95);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 40px;
+  z-index:998;
 }
 
-
-/* ===== 分类图片网格 ===== */
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 40px;
+.sub-title{
+  font-family:"Edwardian Script ITC","Brush Script MT",cursive;
+  font-size:38px;
+  color:#ff6a3d;
 }
 
-/* ===== 单个分类块 ===== */
-.category-item img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 16px;
+.filter-btn{
+  background:none;
+  border:none;
+  padding:8px 18px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:.2s;
 }
 
-/* ===== 分类名称 ===== */
-.category-name {
-  margin-top: 18px;
-  font-family: "Segoe UI Black", "Segoe UI", sans-serif;
-  font-size: 18px;
-  letter-spacing: .5px;
+.filter-btn:hover{
+  background:#ff6a3d;
+  color:#fff;
 }
 
-/* ===== 分类图片点触动画 ===== */
-.category-item img {
-  transition: all .3s ease;
+.filter-btn:active{transform:scale(.95);}
+
+/* ===== 分类页整体下移 ===== */
+.has-subnav .category-section{
+  padding-top:220px;
 }
-
-.category-item:hover img {
-  filter: blur(2px) brightness(0.85);
-}
-
-/* ===== 分类文字按钮反转效果 ===== */
-.category-name {
-  transition: all .3s ease;
-  padding: 6px 12px;
-  border-radius: 18px;
-  display: inline-block;
-}
-
-.category-item:hover .category-name {
-  background: #667eea;
-  color: white;
-}
-
-.category-item {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-.category-item:active {
-  transform: scale(0.96);
-}
-
-/* ===== 二级导航栏 ===== */
-.sub-navbar {
-  position: fixed;
-  top: 90px;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 2px 6px rgba(0,0,0,.1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  z-index: 998;
-}
-
-.sub-title {
-  font-family: "Edwardian Script ITC","Brush Script MT",cursive;
-  font-size: 38px;
-  color: #ff6a3d;        /* 橘红色 */
-}
-
-.filter-btn {
-  background: none;
-  border: none;
-  font-family: "Segoe UI Black","Segoe UI",sans-serif;
-  font-size: 16px;
-  padding: 8px 18px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: .2s;
-}
-
-.filter-btn:hover {
-  background: #ff6a3d;
-  color: white;
-}
-
-.filter-btn:active {
-  transform: scale(0.95);
-}
-
-/* 页面内容整体下移，避免被双层导航遮挡 */
-.category-section {
-  padding-top: 220px;
-}
-
-
-
-
