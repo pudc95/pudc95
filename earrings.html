@@ -5,6 +5,7 @@
 <title>Earrings - Jewelry Baby</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<script src="earrings.js"></script>
 
 <body class="has-subnav">
 
@@ -56,12 +57,17 @@
       <div class="product-price">$129</div>
     </div>
 
-    <div class="product-actions">
-      <button>Change Material</button>
-      <button>Change Style</button>
-      <button>Adjust Price</button>
-    </div>
-  </section>
+<div class="product-actions">
+  <button class="action-btn material">Change Material</button>
+  <button class="action-btn style">Change Style</button>
+</div>
+
+  <div class="price-adjust">
+    <button class="price-minus">−</button>
+    <span class="price-value">$129</span>
+    <button class="price-plus">+</button>
+  </div>
+
 
   <!-- ===== 滚动提示 ===== -->
   <section class="scroll-hint">
@@ -80,5 +86,7 @@ window.addEventListener("scroll",()=>{
 });
 </script>
 
+  <script src="earrings.js"></script>
+  
 </body>
 </html>
