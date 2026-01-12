@@ -129,19 +129,14 @@ body {
   background:linear-gradient(135deg,#fdfbff,#f5f2fa);
   border-top:1px solid rgba(255,255,255,.8);
   border-bottom:1px solid rgba(118,75,162,.15);
-  display:flex;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
   align-items:center;
-  justify-content:space-between;
   padding:0 40px;
   z-index:998;
 }
+.sub-title{justify-self:center;}
 
-.sub-title{
-  font-family:"Edwardian Script ITC","Brush Script MT",cursive;
-  font-size:36px;
-  color:#b85b3a;
-  letter-spacing:1px;
-}
 
 .filter-btn{
   background:none;
@@ -167,3 +162,4 @@ body {
 .has-subnav .category-section{
   padding-top:220px;
 }
+
