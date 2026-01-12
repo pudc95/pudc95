@@ -162,3 +162,41 @@ body{
   border-radius:22px;
   padding:6px 16px;
 }
+
+/* =========================
+   页面自动区分：首页 vs 分类页
+========================= */
+
+/* 默认视为首页 */
+.hero{margin-top:90px;}
+.category-section{
+  padding:120px 10%;
+  background:#fff;
+  text-align:center;
+}
+
+/* 仅当页面存在商品模块时启用分类页布局 */
+body:has(.product-hero) .hero,
+body:has(.product-hero) .category-section{
+  display:none;
+}
+
+/* 分类页专属结构 */
+body:has(.product-hero) .product-hero{
+  position:relative;
+  padding-top:210px;
+  min-height:100vh;
+  width:100%;
+  background:linear-gradient(180deg,#ffffff,#f2edf8,#d8cfe8,#b39ddb,#764ba2);
+  display:grid;
+  grid-template-columns:1.2fr 1fr .8fr;
+  align-items:center;
+  gap:40px;
+  padding-left:8%;
+  padding-right:8%;
+  padding-bottom:80px;
+}
+
+/* 提示条仅分类页显示 */
+body:has(.product-hero) .filter-hint{display:flex;}
+body:not(:has(.product-hero)) .filter-hint{display:none;}
