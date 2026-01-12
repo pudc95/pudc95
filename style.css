@@ -39,6 +39,7 @@ body{
   pointer-events:none;
 }
 
+/* 按钮 */
 .icon-btn,.text-btn,.filter-btn{
   background:none;
   border:none;
@@ -87,7 +88,7 @@ body{
   pointer-events:none;
 }
 
-/* ===== 智能提示条（保持你最初完美的位置） ===== */
+/* ===== 提示条 ===== */
 .filter-hint{
   position:fixed;
   top:162px;
@@ -102,38 +103,48 @@ body{
   align-items:center;
   box-shadow:0 10px 24px rgba(118,75,162,.35);
   z-index:997;
-  transition:opacity .3s ease;
+  transition:opacity .3s;
 }
 
-/* ===== 商品首屏模块：紧贴提示条下方 ===== */
+.hint-action{
+  background:rgba(255,255,255,.2);
+  border:none;
+  padding:6px 16px;
+  border-radius:16px;
+  font-family:"Segoe UI Black","Segoe UI",sans-serif;
+  cursor:pointer;
+  color:white;
+}
+
+.hint-close{
+  cursor:pointer;
+  opacity:.7;
+}
+
+/* ===== 商品首屏 ===== */
 .product-hero{
-  position:relative;
-  padding-top:210px;   /* 唯一需要调节距离的地方 */
+  margin-top:210px;   /* 核心：紧贴提示条 */
   min-height:100vh;
-  width:100%;
-  background:linear-gradient(180deg,#ffffff,#f2edf8,#d8cfe8,#b39ddb,#764ba2);
+  width:100vw;
+  margin-left:calc(-50vw + 50%);
+  background:linear-gradient(180deg,#fff,#f2edf8,#d8cfe8,#b39ddb,#764ba2);
   display:grid;
   grid-template-columns:1.2fr 1fr .8fr;
   align-items:center;
   gap:40px;
-  padding-left:8%;
-  padding-right:8%;
-  padding-bottom:80px;
+  padding:40px 8% 80px;
 }
 
-/* 左图 */
 .product-image img{
   width:100%;
   border-radius:24px;
   box-shadow:0 20px 40px rgba(0,0,0,.25);
 }
 
-/* 中信息 */
 .product-info h2{font-size:32px;color:#764ba2;}
 .product-desc{color:#555;line-height:1.7;}
 .product-price{font-size:36px;color:#b85b3a;margin-top:30px;}
 
-/* 右操作 */
 .product-actions{
   display:flex;
   flex-direction:column;
@@ -162,41 +173,3 @@ body{
   border-radius:22px;
   padding:6px 16px;
 }
-
-/* =========================
-   页面自动区分：首页 vs 分类页
-========================= */
-
-/* 默认视为首页 */
-.hero{margin-top:90px;}
-.category-section{
-  padding:120px 10%;
-  background:#fff;
-  text-align:center;
-}
-
-/* 仅当页面存在商品模块时启用分类页布局 */
-body:has(.product-hero) .hero,
-body:has(.product-hero) .category-section{
-  display:none;
-}
-
-/* 分类页专属结构 */
-body:has(.product-hero) .product-hero{
-  position:relative;
-  padding-top:210px;
-  min-height:100vh;
-  width:100%;
-  background:linear-gradient(180deg,#ffffff,#f2edf8,#d8cfe8,#b39ddb,#764ba2);
-  display:grid;
-  grid-template-columns:1.2fr 1fr .8fr;
-  align-items:center;
-  gap:40px;
-  padding-left:8%;
-  padding-right:8%;
-  padding-bottom:80px;
-}
-
-/* 提示条仅分类页显示 */
-body:has(.product-hero) .filter-hint{display:flex;}
-body:not(:has(.product-hero)) .filter-hint{display:none;}
