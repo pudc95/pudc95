@@ -366,5 +366,9 @@ body.scrolled .filter-hint{
   to{opacity:.8; transform:rotate(45deg) translateY(10px);}
 }
 
+.page-content{
+  padding-top:220px;
+}
+
 
 
