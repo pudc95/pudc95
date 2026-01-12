@@ -218,6 +218,13 @@ body {
   transition:opacity .4s ease, transform .4s ease;
 }
 
+.filter-hint span{
+  font-family:"Segoe UI","Segoe UI Black",sans-serif;
+  font-weight:400;
+  font-size:14px;
+  letter-spacing:.4px;
+}
+
 .hint-action{
   background:rgba(255,255,255,.22);
   border:none;
@@ -283,18 +290,29 @@ body {
 }
 
 .product-info h2{
+  font-family:"Segoe UI","Segoe UI Black",sans-serif;
+  font-weight:500;
   font-size:30px;
   color:#6f5aa6;
-  letter-spacing:.5px;
-  margin-bottom:18px;
+  letter-spacing:.4px;
 }
 
 .product-desc{
+  font-family:"Segoe UI","Segoe UI Black",sans-serif;
+  font-weight:400;
   font-size:15px;
   line-height:1.75;
   color:#5f5f6f;
 }
 
+.product-price{
+  margin-top:26px;
+  font-family:"Segoe UI","Segoe UI Black",sans-serif;
+  font-weight:600;
+  font-size:34px;
+  letter-spacing:.8px;
+  color:#b85b3a;
+}
 
 .product-actions{
   display:flex;
@@ -394,6 +412,7 @@ body.scrolled .filter-hint{
     #5e4b8b 100%
   );
 }
+
 
 
 
