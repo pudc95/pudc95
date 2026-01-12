@@ -46,7 +46,6 @@ body {
   transition:.2s;
 }
 
-
 .icon-btn:hover,.text-btn:hover{
   background:#667eea;
   color:#fff;
@@ -108,6 +107,7 @@ body {
 
 .category-name{
   margin-top:18px;
+  font-family:"Segoe UI Black","Segoe UI",sans-serif;
   font-size:18px;
   transition:.3s;
 }
@@ -119,6 +119,7 @@ body {
   border-radius:18px;
 }
 
+/* ===== 二级栏 ===== */
 .sub-navbar{
   position:fixed;
   top:90px;
@@ -166,4 +167,3 @@ body {
 .has-subnav .category-section{
   padding-top:220px;
 }
-
