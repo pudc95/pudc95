@@ -319,4 +319,45 @@ body.scrolled .filter-hint{
   pointer-events:none;
 }
 
+/* ===== 页面底部探索提示 ===== */
+.scroll-hint{
+  width:100%;
+  text-align:center;
+  padding:90px 0 120px;
+  background:linear-gradient(180deg,
+    rgba(255,255,255,0),
+    rgba(216,207,232,.35),
+    rgba(118,75,162,.6)
+  );
+  color:rgba(255,255,255,.85);
+  font-family:"Segoe UI Black","Segoe UI",sans-serif;
+  letter-spacing:.5px;
+}
+
+.scroll-hint p{
+  font-size:15px;
+  margin-bottom:26px;
+}
+
+/* 双箭头动画 */
+.arrows span{
+  display:block;
+  width:12px;
+  height:12px;
+  border-right:2px solid rgba(255,255,255,.6);
+  border-bottom:2px solid rgba(255,255,255,.6);
+  transform:rotate(45deg);
+  margin:6px auto;
+  animation:down 1.4s infinite alternate;
+}
+
+.arrows span:last-child{
+  animation-delay:.3s;
+}
+
+@keyframes down{
+  from{opacity:.25; transform:rotate(45deg) translateY(0);}
+  to{opacity:.8; transform:rotate(45deg) translateY(10px);}
+}
+
 
