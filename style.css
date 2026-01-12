@@ -39,7 +39,6 @@ body{
   pointer-events:none;
 }
 
-/* 按钮 */
 .icon-btn,.text-btn,.filter-btn{
   background:none;
   border:none;
@@ -88,7 +87,7 @@ body{
   pointer-events:none;
 }
 
-/* ===== 提示条 ===== */
+/* ===== 智能提示条（保持你最初完美的位置） ===== */
 .filter-hint{
   position:fixed;
   top:162px;
@@ -103,48 +102,38 @@ body{
   align-items:center;
   box-shadow:0 10px 24px rgba(118,75,162,.35);
   z-index:997;
-  transition:opacity .3s;
+  transition:opacity .3s ease;
 }
 
-.hint-action{
-  background:rgba(255,255,255,.2);
-  border:none;
-  padding:6px 16px;
-  border-radius:16px;
-  font-family:"Segoe UI Black","Segoe UI",sans-serif;
-  cursor:pointer;
-  color:white;
-}
-
-.hint-close{
-  cursor:pointer;
-  opacity:.7;
-}
-
-/* ===== 商品首屏 ===== */
+/* ===== 商品首屏模块：紧贴提示条下方 ===== */
 .product-hero{
-  margin-top:210px;   /* 核心：紧贴提示条 */
+  position:relative;
+  padding-top:210px;   /* 唯一需要调节距离的地方 */
   min-height:100vh;
-  width:100vw;
-  margin-left:calc(-50vw + 50%);
-  background:linear-gradient(180deg,#fff,#f2edf8,#d8cfe8,#b39ddb,#764ba2);
+  width:100%;
+  background:linear-gradient(180deg,#ffffff,#f2edf8,#d8cfe8,#b39ddb,#764ba2);
   display:grid;
   grid-template-columns:1.2fr 1fr .8fr;
   align-items:center;
   gap:40px;
-  padding:40px 8% 80px;
+  padding-left:8%;
+  padding-right:8%;
+  padding-bottom:80px;
 }
 
+/* 左图 */
 .product-image img{
   width:100%;
   border-radius:24px;
   box-shadow:0 20px 40px rgba(0,0,0,.25);
 }
 
+/* 中信息 */
 .product-info h2{font-size:32px;color:#764ba2;}
 .product-desc{color:#555;line-height:1.7;}
 .product-price{font-size:36px;color:#b85b3a;margin-top:30px;}
 
+/* 右操作 */
 .product-actions{
   display:flex;
   flex-direction:column;
