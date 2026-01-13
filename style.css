@@ -340,16 +340,20 @@ body.scrolled .filter-hint{
 .scroll-hint{
   width:100%;
   text-align:center;
-  padding:90px 0 120px;
-  background:linear-gradient(180deg,
-    rgba(255,255,255,0),
-    rgba(216,207,232,.35),
-    rgba(118,75,162,.6)
+  padding:120px 0 140px;
+  background:linear-gradient(
+    180deg,
+    rgba(242,237,248,1) 0%,
+    rgba(210,200,235,1) 30%,
+    rgba(160,140,200,1) 60%,
+    rgba(118,75,162,1) 85%,
+    rgba(80,55,120,1) 100%
   );
-  color:rgba(255,255,255,.85);
+  color:rgba(255,255,255,.9);
   font-family:"Segoe UI Black","Segoe UI",sans-serif;
   letter-spacing:.5px;
 }
+
 
 .scroll-hint p{
   font-size:15px;
@@ -395,9 +399,9 @@ body.scrolled .filter-hint{
   min-height:100vh;
   background:linear-gradient(
     180deg,
-    #764ba2 0%,
-    #3b2f5f 35%,
-    #120d1f 70%,
+    #503778 0%,      /* 承接 scroll-hint 最底部颜色 */
+    #2a1f44 30%,
+    #120d1f 65%,
     #000000 100%
   );
   padding:140px 10% 160px;
@@ -405,6 +409,7 @@ body.scrolled .filter-hint{
   transform:translateY(120px);
   transition:opacity .8s ease, transform .8s ease;
 }
+
 
 .more-products.active{
   opacity:1;
@@ -453,6 +458,7 @@ body.scrolled .filter-hint{
   font-size:13px;
   color:#b5a6dd;
 }
+
 
 
 
