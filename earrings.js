@@ -4,7 +4,6 @@ const productDB = [
     name: "Crystal Drop Earrings",
     style: "vintage",
     material: "silver",
-    price: 129,
     img: "images/earrings/1001.jpg",
     desc: "Handmade crystal earrings with elegant silver hooks."
   },
@@ -13,7 +12,6 @@ const productDB = [
     name: "Minimal Pearl Earrings",
     style: "minimal",
     material: "gold",
-    price: 199,
     img: "images/earrings/1002.jpg",
     desc: "Minimalist pearl earrings with 18K gold finish."
   },
@@ -22,7 +20,6 @@ const productDB = [
     name: "Classic Hoop Earrings",
     style: "classic",
     material: "gold",
-    price: 169,
     img: "images/earrings/1003.jpg",
     desc: "Classic hoop earrings for everyday elegance."
   }
@@ -34,42 +31,69 @@ function renderProduct(p){
   document.querySelector(".product-image img").src = p.img;
   document.querySelector(".product-info h2").innerText = p.name;
   document.querySelector(".product-desc").innerText = p.desc;
-  document.querySelector(".price-value").innerText = "¥" + p.price;
+}
+
+function renderMoreProducts(){
+  const container = document.querySelector(".more-products-grid");
+  container.innerHTML = "";
+
+  productDB.forEach((p,i)=>{
+    const card = document.createElement("div");
+    card.className = "more-card";
+    card.style.animationDelay = `${i*0.08}s`;
+
+    card.innerHTML = `
+      <img src="${p.img}">
+      <h4>${p.name}</h4>
+      <p>${p.desc}</p>
+    `;
+    container.appendChild(card);
+  });
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
 
   renderProduct(currentProduct);
-
-  document.querySelector(".price-plus").onclick = () => {
-    const higher = productDB.filter(p => p.price > currentProduct.price);
-    if(!higher.length) return alert("No higher priced product.");
-    currentProduct = higher[Math.floor(Math.random()*higher.length)];
-    renderProduct(currentProduct);
-  };
-
-  document.querySelector(".price-minus").onclick = () => {
-    const lower = productDB.filter(p => p.price < currentProduct.price);
-    if(!lower.length) return alert("No lower priced product.");
-    currentProduct = lower[Math.floor(Math.random()*lower.length)];
-    renderProduct(currentProduct);
-  };
+  renderMoreProducts();
 
   document.querySelector(".action-btn.material").onclick = () => {
     const sameStyle = productDB.filter(p =>
       p.material !== currentProduct.material &&
       p.style === currentProduct.style
     );
-    if(!sameStyle.length) return alert("No more materials.");
+    if(!sameStyle.length) return;
     currentProduct = sameStyle[Math.floor(Math.random()*sameStyle.length)];
     renderProduct(currentProduct);
   };
 
   document.querySelector(".action-btn.style").onclick = () => {
     const diffStyle = productDB.filter(p => p.style !== currentProduct.style);
-    if(!diffStyle.length) return alert("No more styles.");
+    if(!diffStyle.length) return;
     currentProduct = diffStyle[Math.floor(Math.random()*diffStyle.length)];
     renderProduct(currentProduct);
   };
+
+  /* ===== Scroll Hint 断点吸附逻辑 ===== */
+  const hint = document.querySelector(".scroll-hint");
+  const more = document.querySelector(".more-products");
+  let locked = true;
+
+  window.addEventListener("scroll",()=>{
+    const rect = hint.getBoundingClientRect();
+
+    if(rect.top < window.innerHeight*0.6 && locked){
+      locked = false;
+      more.classList.add("show");
+      window.scrollTo({
+        top: more.offsetTop,
+        behavior:"smooth"
+      });
+    }
+
+    if(window.scrollY < more.offsetTop-200){
+      locked = true;
+      more.classList.remove("show");
+    }
+  });
 
 });
