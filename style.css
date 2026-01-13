@@ -305,15 +305,6 @@ body {
   color:#5f5f6f;
 }
 
-.product-price{
-  margin-top:26px;
-  font-family:"Segoe UI","Segoe UI Black",sans-serif;
-  font-weight:600;
-  font-size:34px;
-  letter-spacing:.8px;
-  color:#b85b3a;
-}
-
 .product-actions{
   display:flex;
   flex-direction:column;
@@ -338,19 +329,6 @@ body {
   background:#764ba2;
   color:#fff;
 }
-
-.price-adjust{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border:2px solid #b85b3a;
-  border-radius:22px;
-  padding:8px 18px;
-  font-family:"Segoe UI Black","Segoe UI",sans-serif;
-  font-size:14px;
-  color:#b85b3a;
-}
-
 
 body.scrolled .filter-hint{
   opacity:0;
@@ -412,6 +390,7 @@ body.scrolled .filter-hint{
     #5e4b8b 100%
   );
 }
+
 
 
 
