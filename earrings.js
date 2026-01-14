@@ -74,6 +74,9 @@ document.addEventListener("DOMContentLoaded",()=>{
   };
 
   /* ===== Scroll Hint 断点吸附逻辑 ===== */
+let snapTop = document.querySelector(".product-hero").offsetTop - 120;
+let isSnapping = false;
+
   const hint = document.querySelector(".scroll-hint");
   const more = document.querySelector(".more-products");
   let locked = true;
@@ -81,19 +84,23 @@ document.addEventListener("DOMContentLoaded",()=>{
   window.addEventListener("scroll",()=>{
     const rect = hint.getBoundingClientRect();
 
-    if(rect.top < window.innerHeight*0.45 && locked){
-      locked = false;
-      more.classList.add("active");
-      window.scrollTo({
-        top: more.offsetTop,
-        behavior:"smooth"
-      });
-    }
+if(rect.top > window.innerHeight * 0.65 && !isSnapping){
+  isSnapping = true;
+  window.scrollTo({ top: snapTop, behavior: "smooth" });
+  setTimeout(()=> isSnapping=false, 600);
+}
 
     if(window.scrollY < more.offsetTop-300){
       locked = true;
       more.classList.remove("active");
     }
   });
+if(window.scrollY < snapTop + 40 && !locked){
+  locked = true;
+  more.classList.remove("active");
+  isSnapping = true;
+  window.scrollTo({ top: snapTop, behavior: "smooth" });
+  setTimeout(()=> isSnapping=false, 600);
+}
 
 });
