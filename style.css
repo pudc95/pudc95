@@ -265,13 +265,12 @@ body {
 
   background:linear-gradient(
     145deg,
-    rgba(255,255,255,.92),
-    rgba(245,242,252,.88)
+    rgba(255,255,255,.85),
+    rgba(245,240,252,.72)
   );
 
+
   border-radius:30px;
-  border:1px solid rgba(255,255,255,.55);
-  backdrop-filter: blur(8px);
 
   box-shadow:
     0 18px 45px rgba(118,75,162,.28),
@@ -456,6 +455,7 @@ body.scrolled .filter-hint{
   font-size:13px;
   color:#b5a6dd;
 }
+
 
 
 
