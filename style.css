@@ -384,26 +384,30 @@ body.scrolled .filter-hint{
 
 .page-content{
   padding-top:220px;
-  min-height:100vh;
+  min-height:200vh;
   background:linear-gradient(
     180deg,
     #ffffff 0%,
-    #f4f0fa 18%,
-    #e0d8f2 40%,
-    #c2b2e3 65%,
-    #8c7ac8 85%,
-    #5e4b8b 100%
+    #f7f3fc 12%,
+    #ede6f8 24%,
+    #d9cdee 38%,
+    #b39ddb 52%,
+    #8c7ac8 65%,
+    #5e4b8b 78%,
+    #2c2142 88%,
+    #0f0b18 94%,
+    #000000 100%
   );
 }
 
 .more-products{
   min-height:100vh;
-  background:#000000;
-  padding:40px 10% 160px;
+  background:transparent;
+  padding:160px 10% 160px;
+  opacity:0;
+  transform:translateY(120px);
   transition:opacity .8s ease, transform .8s ease;
 }
-
-
 
 .more-products.active{
   opacity:1;
@@ -452,6 +456,7 @@ body.scrolled .filter-hint{
   font-size:13px;
   color:#b5a6dd;
 }
+
 
 
 
