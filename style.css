@@ -254,113 +254,40 @@ body {
   transform:scale(1.2);
 }
 
-
-.product-hero{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 clamp(24px,6vw,96px);
-  position:relative;
-  display:flex;
-  gap:60px;
-  background:transparent;
-}
-
-.product-hero{
-  margin-top:40px;
-  padding:60px;
-  border-radius:36px;
-
+.filter-card-bg{
+  position:absolute;
+  inset:0;
   background:linear-gradient(
     180deg,
-    rgba(255,255,255,.92) 0%,
-    #f2eaff 35%,
-    #dccdf6 60%,
-    #b39ddb 82%,
+    #ffffff 0%,
+    #f3ecff 35%,
+    #dacaf6 60%,
+    #b39ddb 80%,
     #764ba2 100%
   );
-
-  box-shadow:
-    0 40px 80px rgba(40,20,90,.35),
-    inset 0 0 0 1px rgba(255,255,255,.6);
+  z-index:0;
 }
 
-.product-hero > *{
-  background:rgba(255,255,255,.88);
-  backdrop-filter:blur(14px);
-  border-radius:26px;
-  padding:40px;
-  box-shadow:
-    0 30px 60px rgba(30,15,70,.25),
-    inset 0 0 0 1px rgba(255,255,255,.6);
+.filter-card-content{
+  position:relative;
+  z-index:1;
+  display:flex;
+  gap:40px;
 }
 
-.product-image,
-.product-info,
-.product-actions{
-  background:rgba(255,255,255,.15);
-  backdrop-filter:blur(8px);
-  border-radius:22px;
-  padding:32px;
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.25);
-}
-
-  border-radius:30px;
-
-  box-shadow:
-    0 18px 45px rgba(118,75,162,.28),
-    inset 0 0 0.5px rgba(255,255,255,.8);
-}
-
-.product-image img{
-  width:100%;
+.filter-image img{
+  width:320px;
   height:420px;
   object-fit:cover;
   border-radius:24px;
-  box-shadow:
-    0 14px 30px rgba(0,0,0,.22),
-    inset 0 0 0.5px rgba(255,255,255,.7);
 }
 
-.product-info h2{
-  font-family:"Segoe UI","Segoe UI Black",sans-serif;
-  font-weight:500;
-  font-size:30px;
-  color:#6f5aa6;
-  letter-spacing:.4px;
-}
-
-.product-desc{
-  font-family:"Segoe UI","Segoe UI Black",sans-serif;
-  font-weight:400;
-  font-size:15px;
-  line-height:1.75;
-  color:#5f5f6f;
-}
-
-.product-actions{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:20px;
-}
-
-.product-actions button{
-  background:none;
-  border:2px solid #764ba2;
-  color:#764ba2;
-  padding:10px 0;
+.filter-info,
+.filter-actions{
+  background:rgba(255,255,255,.25);
+  backdrop-filter:blur(8px);
   border-radius:22px;
-  cursor:pointer;
-  font-family:"Segoe UI Black","Segoe UI",sans-serif;  /* 和 menu 一致 */
-  font-size:14px;
-  letter-spacing:.4px;
-  transition:.2s;
-}
-
-.product-actions button:hover{
-  background:#764ba2;
-  color:#fff;
+  padding:32px;
 }
 
 body.scrolled .filter-hint{
@@ -490,6 +417,7 @@ body.scrolled .filter-hint{
   font-size:13px;
   color:#b5a6dd;
 }
+
 
 
 
