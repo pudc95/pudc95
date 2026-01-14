@@ -34,7 +34,7 @@ function renderProduct(p){
 }
 
 function renderMoreProducts(){
-  const container = document.querySelector(".more-products-grid");
+  const container = document.querySelector(".more-grid");
   container.innerHTML = "";
 
   productDB.forEach((p,i)=>{
@@ -81,18 +81,18 @@ document.addEventListener("DOMContentLoaded",()=>{
   window.addEventListener("scroll",()=>{
     const rect = hint.getBoundingClientRect();
 
-    if(rect.top < window.innerHeight*0.6 && locked){
+    if(rect.top < window.innerHeight*0.45 && locked){
       locked = false;
-      more.classList.add("show");
+      more.classList.add("active");
       window.scrollTo({
         top: more.offsetTop,
         behavior:"smooth"
       });
     }
 
-    if(window.scrollY < more.offsetTop-200){
+    if(window.scrollY < more.offsetTop-300){
       locked = true;
-      more.classList.remove("show");
+      more.classList.remove("active");
     }
   });
 
