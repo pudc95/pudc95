@@ -254,52 +254,74 @@ body {
   transform:scale(1.2);
 }
 
-.filter-card{
-  position:relative;
+.filter-hero{
   max-width:1200px;
-  margin:80px auto 0;
-  padding:80px 60px;
-  border-radius:40px;
-  overflow:hidden;
-  isolation:isolate;    /* 🔥 解决一切背景消失问题的核心 */
-  z-index:2;
-}
-
-.filter-card-bg{
-  position:absolute;
-  inset:0;
+  margin:60px auto 0;
+  padding:4px;
+  border-radius:42px;
   background:linear-gradient(
     180deg,
     #ffffff 0%,
-    #f3ecff 35%,
-    #dacaf6 60%,
+    #f1ebff 35%,
+    #d8c9f4 60%,
     #b39ddb 80%,
     #764ba2 100%
   );
-  z-index:-1;          /* 必须为 -1，配合 isolation 才生效 */
+  box-shadow:
+    0 40px 90px rgba(70,30,120,.45);
 }
 
-
-.filter-card-content{
-  position:relative;
-  z-index:1;
+.filter-hero-inner{
+  background:rgba(255,255,255,.82);
+  border-radius:38px;
+  padding:60px;
   display:flex;
-  gap:40px;
+  gap:48px;
+  backdrop-filter:blur(12px);
 }
 
 .filter-image img{
-  width:320px;
-  height:420px;
+  width:340px;
+  height:440px;
   object-fit:cover;
-  border-radius:24px;
+  border-radius:26px;
+  box-shadow:0 18px 40px rgba(0,0,0,.28);
 }
 
-.filter-info,
+.filter-info h2{
+  font-size:30px;
+  color:#6f5aa6;
+  margin-bottom:14px;
+}
+
+.filter-info p{
+  font-size:15px;
+  color:#5f5f6f;
+  line-height:1.7;
+}
+
 .filter-actions{
-  background:rgba(255,255,255,.25);
-  backdrop-filter:blur(8px);
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  justify-content:center;
+}
+
+.filter-actions button{
+  background:none;
+  border:2px solid #764ba2;
+  color:#764ba2;
+  padding:12px 0;
   border-radius:22px;
-  padding:32px;
+  cursor:pointer;
+  font-family:"Segoe UI Black","Segoe UI",sans-serif;
+  letter-spacing:.4px;
+  transition:.25s;
+}
+
+.filter-actions button:hover{
+  background:#764ba2;
+  color:#fff;
 }
 
 body.scrolled .filter-hint{
@@ -429,6 +451,7 @@ body.scrolled .filter-hint{
   font-size:13px;
   color:#b5a6dd;
 }
+
 
 
 
