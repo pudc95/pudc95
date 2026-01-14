@@ -383,30 +383,33 @@ body.scrolled .filter-hint{
 
 .page-content{
   padding-top:220px;
-  min-height:200vh;
+  min-height:120vh;
   background:linear-gradient(
     180deg,
     #ffffff 0%,
-    #f7f3fc 12%,
-    #ede6f8 24%,
-    #d9cdee 38%,
-    #b39ddb 52%,
-    #8c7ac8 65%,
-    #5e4b8b 78%,
-    #2c2142 88%,
-    #0f0b18 94%,
-    #000000 100%
+    #f4f0fa 22%,
+    #e1d9f3 45%,
+    #b9a7df 68%,
+    #7b63b8 88%,
+    #5a4696 100%
   );
 }
 
+
 .more-products{
-  min-height:100vh;
-  background:transparent;
-  padding:160px 10% 160px;
-  opacity:0;
-  transform:translateY(120px);
-  transition:opacity .8s ease, transform .8s ease;
+  min-height:120vh;
+  background:linear-gradient(
+    180deg,
+    #5a4696 0%,
+    #2a203f 30%,
+    #0f0b18 60%,
+    #000000 100%
+  );
+  padding:180px 10% 200px;
+  position:relative;
+  z-index:1;
 }
+
 
 .more-products.active{
   opacity:1;
@@ -417,6 +420,8 @@ body.scrolled .filter-hint{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:56px 64px;
+  position:relative;
+  z-index:2;
 }
 
 .more-card{
@@ -455,6 +460,7 @@ body.scrolled .filter-hint{
   font-size:13px;
   color:#b5a6dd;
 }
+
 
 
 
