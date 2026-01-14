@@ -257,17 +257,22 @@ body {
 
 .product-hero{
   max-width:1200px;
-  margin:48px auto 0;
-  padding:56px 64px;
-  display:grid;
-  grid-template-columns:1.2fr 1fr .8fr;
-  gap:52px;
+  margin:0 auto;
+  padding:0 clamp(24px,6vw,96px);
+  position:relative;
+  display:flex;
+  gap:60px;
+}
 
-  background:linear-gradient(
-    145deg,
-    rgba(255,255,255,.85),
-    rgba(245,240,252,.72)
-  );
+.product-hero > *{
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(14px);
+  border-radius:26px;
+  padding:40px;
+  box-shadow:
+    0 30px 60px rgba(30,15,70,.25),
+    inset 0 0 0 1px rgba(255,255,255,.6);
+}
 
 
   border-radius:30px;
@@ -382,18 +387,28 @@ body.scrolled .filter-hint{
 }
 
 .page-content{
+  position:relative;
   padding-top:220px;
   min-height:120vh;
+  background:transparent;
+  overflow:hidden;
+}
+
+/* 新增一个伪背景层 */
+.page-content::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
   background:linear-gradient(
     180deg,
     #ffffff 0%,
-    #f4f0fa 22%,
-    #e1d9f3 45%,
-    #b9a7df 68%,
-    #7b63b8 88%,
-    #5a4696 100%
+    #faf7ff 35%,
+    #e8ddfb 60%,
+    #6c4aa1 100%
   );
 }
+
 
 
 .more-products{
@@ -460,6 +475,7 @@ body.scrolled .filter-hint{
   font-size:13px;
   color:#b5a6dd;
 }
+
 
 
 
