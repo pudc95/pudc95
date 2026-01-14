@@ -410,7 +410,7 @@ body.scrolled .filter-hint{
 .more-products{
   min-height:100vh;
   background:#000000;
-  padding:160px 10% 160px;
+  padding:40px 10% 160px;
   opacity:0;
   transform:translateY(120px);
   transition:opacity .8s ease, transform .8s ease;
@@ -465,6 +465,7 @@ body.scrolled .filter-hint{
   font-size:13px;
   color:#b5a6dd;
 }
+
 
 
 
