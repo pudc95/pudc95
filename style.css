@@ -254,6 +254,17 @@ body {
   transform:scale(1.2);
 }
 
+.filter-card{
+  position:relative;
+  max-width:1200px;
+  margin:80px auto 0;
+  padding:80px 60px;
+  border-radius:40px;
+  overflow:hidden;
+  isolation:isolate;    /* 🔥 解决一切背景消失问题的核心 */
+  z-index:2;
+}
+
 .filter-card-bg{
   position:absolute;
   inset:0;
@@ -265,8 +276,9 @@ body {
     #b39ddb 80%,
     #764ba2 100%
   );
-  z-index:0;
+  z-index:-1;          /* 必须为 -1，配合 isolation 才生效 */
 }
+
 
 .filter-card-content{
   position:relative;
@@ -417,6 +429,7 @@ body.scrolled .filter-hint{
   font-size:13px;
   color:#b5a6dd;
 }
+
 
 
 
