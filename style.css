@@ -256,29 +256,27 @@ body {
 
 .filter-hero{
   max-width:1200px;
-  margin:60px auto 0;
+  margin:80px auto 0;
   padding:4px;
   border-radius:42px;
   background:linear-gradient(
     180deg,
-    #ffffff 0%,
-    #f1ebff 35%,
-    #d8c9f4 60%,
-    #b39ddb 80%,
+    #e9ddff 0%,
+    #c8b6f2 35%,
+    #9c82d6 60%,
     #764ba2 100%
   );
-  box-shadow:
-    0 40px 90px rgba(70,30,120,.45);
+  box-shadow:0 40px 90px rgba(50,20,90,.45);
 }
 
 .filter-hero-inner{
-  background:rgba(255,255,255,.82);
+  background:rgba(255,255,255,.88);
   border-radius:38px;
   padding:60px;
   display:flex;
   gap:48px;
-  backdrop-filter:blur(12px);
 }
+
 
 .filter-image img{
   width:340px;
@@ -349,8 +347,8 @@ body.scrolled .filter-hint{
     #2a203f 70%,
     #000 100%
   );;
-  padding-top:160px;
-  margin-top:-80px; /* 关键：向上覆盖上一块 */
+  padding-top:200px;
+  margin-top:0px; /* 关键：向上覆盖上一块 */
 }
 
 .scroll-hint p{
@@ -451,6 +449,7 @@ body.scrolled .filter-hint{
   font-size:13px;
   color:#b5a6dd;
 }
+
 
 
 
