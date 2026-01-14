@@ -262,6 +262,7 @@ body {
   position:relative;
   display:flex;
   gap:60px;
+  background:transparent;
 }
 
 .product-hero > *{
@@ -282,6 +283,17 @@ body {
     inset 0 0 0.5px rgba(255,255,255,.8);
 }
 
+.product-image,
+.product-info,
+.product-actions{
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(14px);
+  border-radius:26px;
+  padding:40px;
+  box-shadow:
+    0 24px 50px rgba(40,20,90,.28),
+    inset 0 0 0 1px rgba(255,255,255,.65);
+}
 
 .product-image img{
   width:100%;
@@ -475,6 +487,7 @@ body.scrolled .filter-hint{
   font-size:13px;
   color:#b5a6dd;
 }
+
 
 
 
