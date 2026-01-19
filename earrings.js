@@ -1,30 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const products = [
-    {
-      img:"images/earrings/1002.jpg",
-      name:"Minimal Pearl Drop",
-      desc:"Elegant daily design",
-      tags:["Pearl","Daily","Minimal"]
-    },
-    {
-      img:"images/earrings/1003.jpg",
-      name:"Golden Halo",
-      desc:"Luxury party style",
-      tags:["Gold","Party"]
-    },
-    {
-      img:"images/earrings/1004.jpg",
-      name:"Crystal Moon",
-      desc:"Romantic night look",
-      tags:["Crystal","Romantic"]
-    },
-    {
-      img:"images/earrings/1005.jpg",
-      name:"Silver Leaf",
-      desc:"Light minimalist",
-      tags:["Silver","Minimal"]
-    }
+{
+  img:"images/earrings/1002.jpg",
+  name:"Minimal Pearl Drop",
+  desc:"Elegant daily design",
+  tags:["Pearl","Daily"],
+  material:"Pearl"
+}
+
   ];
 
   const grid = document.getElementById("moreGrid");
@@ -87,3 +71,28 @@ grid.addEventListener("click", e=>{
 document.querySelector(".detail-close").onclick = ()=>{
   detail.classList.remove("active");
 };
+
+const panel = document.getElementById("filterPanel");
+document.getElementById("filterBtn").onclick = ()=>{
+  panel.classList.toggle("active");
+};
+
+document.querySelectorAll(".filter-group span").forEach(btn=>{
+  btn.onclick = ()=>{
+    const type = btn.dataset.filter;
+    document.querySelectorAll(".filter-group span")
+      .forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+
+    grid.innerHTML = "";
+    products
+      .filter(p=>p.material === type)
+      .forEach((p,i)=>renderCard(p,i));
+  };
+});
+
+document.getElementById("filterClear").onclick = ()=>{
+  grid.innerHTML="";
+  products.forEach((p,i)=>renderCard(p,i));
+};
+
