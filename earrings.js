@@ -64,3 +64,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+const detail = document.getElementById("productDetail");
+const dImg = document.getElementById("detailImg");
+const dTitle = document.getElementById("detailTitle");
+const dDesc = document.getElementById("detailDesc");
+const dTags = document.getElementById("detailTags");
+
+grid.addEventListener("click", e=>{
+  const card = e.target.closest(".more-card");
+  if(!card) return;
+
+  dImg.src = card.querySelector("img").src;
+  dTitle.textContent = card.querySelector("h4").textContent;
+  dDesc.textContent = card.querySelector("p").textContent;
+
+  dTags.innerHTML = card.querySelector(".more-tags").innerHTML;
+
+  detail.classList.add("active");
+});
+
+document.querySelector(".detail-close").onclick = ()=>{
+  detail.classList.remove("active");
+};
