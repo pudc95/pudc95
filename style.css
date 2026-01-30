@@ -715,11 +715,12 @@ body.scrolled .filter-hint{
   width: 35%; /* 右侧卡片占页面宽度的35% */
 }
 
-/* 图片：居左，裁剪成圆角正方形 */
+/* 图片：确保是正方形并裁剪 */
 .product-img {
   position: relative;
-  width: 100%; /* 图片宽度与卡片宽度一致 */
-  height: 100%;
+  width: 50%; /* 图片宽度与卡片宽度一致 */
+  height: 0;
+  padding-top: 50%; /* 保证图片容器的宽高比是1:1（正方形） */
   overflow: hidden;
   border-radius: 12px;
 }
@@ -773,6 +774,7 @@ body.scrolled .filter-hint{
   background: #000;
   color: #fff;
 }
+
 
 
 
