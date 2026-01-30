@@ -615,7 +615,7 @@ body.scrolled .filter-hint{
 }
 
 .necklace-title {
-  font-family: "Lucida Calligraphy", cursive;
+  font-family: "Century Gothic", sans-serif;
   font-weight: bold;
   font-size: 26px;
   margin: 0 0 12px;
@@ -677,6 +677,81 @@ body.scrolled .filter-hint{
   font-size: 14px;
   text-align: center;
   letter-spacing: 0.4px;
+}
+
+/* ===== 商品区域布局 ===== */
+.other-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+/* 单个商品卡片 */
+.product-card {
+  width: 45%;  /* 默认大卡片宽度 */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+}
+
+/* 适配不同宽度的卡片 */
+.product-card:nth-child(2) {
+  width: 35%;
+}
+
+.product-card:nth-child(3) {
+  width: 25%;
+}
+
+/* 商品图片 */
+.product-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* 商品信息 */
+.product-info h3 {
+  font-family: "Century Gothic", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+
+.product-info .product-desc {
+  font-family: "Century Gothic", sans-serif;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* 商品标签 */
+.product-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  font-family: "Century Gothic", sans-serif;
+  font-size: 12px;
+  padding: 6px 12px;
+  border: 1px solid #000;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: #000;
+  color: #fff;
 }
 
 
