@@ -1,26 +1,71 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Necklaces - Jewelry Baby</title>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<script src="earrings.js"></script>
 
-<div class="navbar">
+<body class="has-subnav">
+
+<!-- ===== 主导航 ===== -->
+<header class="navbar">
   <div class="nav-left">
-    <button class="icon-btn" onclick="history.back()">← Back</button>
+    <button class="icon-btn">Menu</button>
+    <button class="icon-btn">Search</button>
+  </div>
+  <div class="brand">Jewelry Baby</div>
+  <div class="nav-right">
+    <button class="text-btn">Account</button>
+    <button class="text-btn">Contact Us</button>
+  </div>
+</header>
+
+<!-- ===== 二级导航 ===== -->
+<header class="sub-navbar">
+  <div class="sub-left">
+    <button class="filter-btn" onclick="history.back()">← Back</button>
+  </div>
+  <div class="sub-title">Necklaces</div> <!-- 改为Necklaces -->
+  <div class="sub-right">
+    <button class="filter-btn" id="filterBtn">Filter</button>
+
+<div class="filter-panel" id="filterPanel">
+  <h4>Filter by</h4>
+
+  <div class="filter-group">
+    <span data-filter="Gold">Gold</span>
+    <span data-filter="Silver">Silver</span>
+    <span data-filter="Pearl">Pearl</span>
+    <!-- 可以根据需要修改过滤选项 -->
   </div>
 
-  <div class="brand">Jewelry Baby</div>
-
-  <div class="nav-right"></div>
+  <button id="filterClear">Clear</button>
 </div>
 
-<div class="category-section">
-  <div class="category-title">Necklaces</div>
-  <p style="font-size:20px;">Here you can showcase all your necklaces products.</p>
+  </div>
+</header>
+
+<!-- ===== 智能提示条 ===== -->
+<div class="filter-hint" id="filterHint">
+  <span>Let us help you discover the perfect piece for today.</span>
+  <button class="hint-action">Explore by myself</button>
+  <span class="hint-close" onclick="this.parentElement.remove()">✕</span>
 </div>
+
+<!-- ===== 主内容区 ===== -->
+<main class="page-content">
+  <!-- 删除了所有的产品展示和详细信息部分，只保留导航区域 -->
+</main>
+
+<script>
+window.addEventListener("scroll",()=>{  
+  document.body.classList.toggle("scrolled", window.scrollY > 40);  
+});
+</script>
+
+<script src="earrings.js"></script>
 
 </body>
 </html>
