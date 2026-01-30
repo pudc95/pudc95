@@ -682,9 +682,17 @@ body.scrolled .filter-hint{
 /* ===== 商品区域布局 ===== */
 .other-products {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column;
+  gap: 40px;
   margin-top: 60px;
+  align-items: center;
+}
+
+/* 每行商品卡片的包装器 */
+.product-card-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* 卡片之间的空白 */
 }
 
 /* 单个商品卡片 */
@@ -712,7 +720,7 @@ body.scrolled .filter-hint{
 /* 商品图片 */
 .product-img img {
   width: 100%;
-  height: 70%;
+  height: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
