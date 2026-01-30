@@ -690,8 +690,8 @@ body.scrolled .filter-hint{
 .product-card-wrapper {
   display: flex;
   justify-content: space-between; /* 保证卡片在水平方向上的分布 */
-  width: 88%; /* 总宽度占页面的0.8 */
-  gap: 8%; /* 卡片之间没有间隔 */
+  width: 88%; /* 总宽度占页面的88% */
+  gap: 8%; /* 卡片之间的间隔占页面宽度的8% */
 }
 
 /* 单个商品卡片 */
@@ -713,15 +713,6 @@ body.scrolled .filter-hint{
 
 .product-card.right {
   width: 35%; /* 右侧卡片占页面宽度的35% */
-}
-
-/* 左右空白间距处理 */
-.product-card.left {
-  margin-left: 10%; /* 左侧卡片左边距占页面总宽度的10% */
-}
-
-.product-card.right {
-  margin-right: 10%; /* 右侧卡片右边距占页面总宽度的10% */
 }
 
 /* 图片：居左，裁剪成圆角正方形 */
