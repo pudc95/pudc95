@@ -682,17 +682,16 @@ body.scrolled .filter-hint{
 /* ===== 商品区域布局 ===== */
 .other-products {
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  justify-content: center;
   margin-top: 60px;
-  align-items: center;
 }
 
-/* 每行商品卡片的包装器 */
+/* 商品卡片的包装器（确保一行只有两个卡片，并有空白间距） */
 .product-card-wrapper {
   display: flex;
-  justify-content: center;
-  gap: 20px; /* 卡片之间的空白 */
+  justify-content: space-between; /* 保证卡片在水平方向上的分布 */
+  width: 80%; /* 总宽度占页面的0.8 */
+  gap: 0; /* 卡片之间没有间隔 */
 }
 
 /* 单个商品卡片 */
@@ -701,31 +700,53 @@ body.scrolled .filter-hint{
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 16px;
   gap: 12px;
   height: 25vh; /* 高度为页面纵向的0.25 */
 }
 
-/* 左侧卡片占45%宽度 */
+/* 左侧卡片宽度占45%，右侧卡片占35% */
 .product-card.left {
-  width: 45%;
+  width: 45%; /* 左侧卡片占页面宽度的45% */
 }
 
-/* 右侧卡片占35%宽度 */
 .product-card.right {
-  width: 35%;
+  width: 35%; /* 右侧卡片占页面宽度的35% */
 }
 
-/* 商品图片 */
+/* 左右空白间距处理 */
+.product-card.left {
+  margin-left: 10%; /* 左侧卡片左边距占页面总宽度的10% */
+}
+
+.product-card.right {
+  margin-right: 10%; /* 右侧卡片右边距占页面总宽度的10% */
+}
+
+/* 图片：居左，裁剪成圆角正方形 */
+.product-img {
+  position: relative;
+  width: 50%; /* 图片宽度与卡片宽度一致 */
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
 .product-img img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
 }
 
-/* 商品信息 */
+/* 商品信息区域 */
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .product-info h3 {
   font-family: "Century Gothic", sans-serif;
   font-size: 18px;
