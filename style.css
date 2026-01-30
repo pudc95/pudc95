@@ -690,8 +690,8 @@ body.scrolled .filter-hint{
 .product-card-wrapper {
   display: flex;
   justify-content: space-between; /* 保证卡片在水平方向上的分布 */
-  width: 88%; /* 总宽度占页面的88% */
-  gap: 8%; /* 卡片之间的间隔占页面宽度的8% */
+  width: 84%; /* 总宽度占页面的88% */
+  gap: 4%; /* 卡片之间的间隔占页面宽度的8% */
 }
 
 /* 单个商品卡片 */
@@ -773,4 +773,5 @@ body.scrolled .filter-hint{
   background: #000;
   color: #fff;
 }
+
 
